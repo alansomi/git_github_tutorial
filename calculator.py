@@ -23,7 +23,7 @@ while True:
     n1 = float(input("Enter the first number:"))
     n2 =float(input("Enter the second number :"))
   except ValueError:
-     print("Invalid value ,try again")
+     print("❌Invalid value ,try again")
      continue
      
      
