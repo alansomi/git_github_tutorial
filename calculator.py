@@ -23,7 +23,7 @@ while True:
     n1 = float(input("Enter the first number:"))
     n2 =float(input("Enter the second number :"))
   except ValueError:
-     print("❌Invalid value ,try again")
+     print("❌Invalid value ,Enter numbers only")
      continue
      
      
@@ -38,24 +38,31 @@ while True:
 
   if choice == "1":
     result = addition(n1,n2)
-    print("Addition    :", result)
+    operation = "+"
   elif choice == "2":
     result = subtract(n1,n2 )
-    print("Subtraction   :",result)
+    operation = "-"
   elif choice == "3":
     result = multiply(n1,n2)
-    print("Multiplication of inputs   :",result)
+    operation = "*"
   elif choice == "4":
     result = division(n1,n2)
-    print("Division of inputs   :",result)
+    operation = "/"
   else :
     print("Invalid choice,Try again")
- 
-  exit =input("Do you want to continue (y/n)".lower())
+    continue
+  print("result:",result)
 
-  if exit == "n":
 
-    print("Thank for using calculator,see you soon 😊")
+# saving history of calculation files in to a file
+  with open("calculator.txt","a") as file:
+     file.write(f"{n1} {operation} {n2}'='{result} \n")
+
+  exit_choose = input("Do you want to continue (y/n) ").lower()
+
+  if exit_choose = "n":
+
+    print("History is saved in calculator.txt file 📄")
     break
  
  
